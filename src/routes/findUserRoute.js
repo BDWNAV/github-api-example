@@ -20,7 +20,15 @@ router.get('/:username', (req, res) => {
         }
     }).then((data) => {
         console.log(data);
-        res.json(data);
+        res.render('userPage', {
+            username: data.login,
+            avatar: data.avatar_url,
+            followers: data.followers,
+            following: data.following,
+            bio: data.bio,
+            public_repos: data.public_repos,
+            public_gists: data.public_gists
+        });
     }).catch((err) => {
         console.log(err);
     });
