@@ -15,6 +15,6 @@ app.use('/', mainRoute);
 app.use('/stats', findUserRoute);
 app.use('/stats/:username', findUserRoute)
 
-app.listen(port, () => {
+app.listen(process.env.PORT, () => {
     console.log("On a website.");
 });
